@@ -1,17 +1,15 @@
-import { Component } from "react";
-import "./Navbar.css";
+import './Navbar.css';
 
-class Navbar extends Component {
-  // Set state
-  // Make Handleclick Function
-
-  render() {
-    return (
-      <nav className="NavbarItems">
-        <h1>7Hats</h1>
-      </nav>
-    );
-  }
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <ul>
+        <li><a href="#tours">Tours</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Navbar;
