@@ -1,5 +1,6 @@
 import './LandingPage.css';
 import React, { useState } from 'react';
+import ToursSection from '../../Components/Main/Tours/TourSection.js'; // Adjust the import path as per your project structure
 
 const LandingPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -10,16 +11,26 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container">
+      <div className="top-info">
+        <span>00-123-456789 | Bernard 120, Lo-Reninge, Belgium | info@example.com</span>
+        <div className="top-links">
+          <a href="#faq">Faq</a>
+          <a href="#tos">Terms Of Service</a>
+        </div>
+      </div>
+      <div class="divider"></div>
       <nav className="navbar">
         <div className="navbar-logo">7Hats</div>
         <div className="navbar-toggle" onClick={toggleNavbar}>
           &#9776;
         </div>
         <ul className={`navbar-links ${isNavOpen ? 'active' : ''}`}>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#locations">Locations</a></li>
           <li><a href="#contact">Contact Us</a></li>
+          <li className="navbar-phone">
+            <i className="fas fa-phone-alt"></i> Call Us +000 123 456 789
+          </li>
         </ul>
       </nav>
 
@@ -32,60 +43,25 @@ const LandingPage = () => {
       </header>
 
       <section id="about" className="about">
-        <h2>About Us</h2>
-        <p>7Hats is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis imperdiet proin fermentum leo. Porta lorem mollis aliquam ut porttitor leo. Sit amet commodo nulla facilisi nullam vehicula ipsum a. Pellentesque elit eget gravida cum sociis natoque penatibus et magnis. Enim ut tellus elementum sagittis vitae et. Pharetra et ultrices neque ornare aenean euismod. Sed blandit libero volutpat sed. Fermentum posuere urna nec tincidunt. Quam vulputate dignissim suspendisse in est. Id neque aliquam vestibulum morbi blandit cursus risus at. Tellus at urna condimentum mattis pellentesque id nibh tortor. Nunc sed id semper risus in hendrerit gravida. Habitant morbi tristique senectus et. Tellus mauris a diam maecenas sed enim ut sem. Id ornare arcu odio ut sem.</p>
-      </section>
-
-      <section id="pricing" className="pricing">
-        <h2>Pricing</h2>
-        <div className="pricing-plans">
-          <div className="plan">
-            <h3>Dolore</h3>
-            <div className="price-container">
-              <h2>$450<span>/one time</span></h2>
-              <p className="annual">Lorem ipsum dolor sit amet.</p>
-            </div>
-            <button className="btn">Buy plan</button>
-            <ul>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Labore et dolore magna aliqua. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac.</li>
-              <li> Sit amet luctus venenatis lectus.</li>
-              <li>48-hour support response time</li>
-            </ul>
+        <div className="about-content">
+          <div className="about-header">
+            <h2>About Us</h2>
+            <i className="fas fa-globe"></i> {/* Example icon, replace with appropriate icon */}
           </div>
-          <div className="plan popular-plan">
-            <h3>Lorem</h3>
-            <div className="price-container">
-              <h2>$600<span>/one time</span></h2>
-              <p className="annual">Lorem ipsum dolor sit amet.</p>
+          <div className="about-details">
+          <div className="about-image">
+              <img src="https://framerusercontent.com/images/LFk5B5IxBlb2wEVCa388JSoBfJQ.jpg" alt="Adventure" />
             </div>
-            <button className="btn">Buy plan</button>
-            <ul>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Labore et dolore magna aliqua.</li>
-              <li>Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac.</li>
-              <li>24-hour support response time</li>
-              <li>Sit amet luctus venenatis lectus.</li>
-            </ul>
-          </div>
-          <div className="plan">
-            <h3>Nulla</h3>
-            <div className="price-container">
-              <h2>$1000<span>/one time</span></h2>
-              <p className="annual">Lorem ipsum dolor sit amet.</p>
+            <div className="about-text">
+              <p>Embark on extraordinary adventures with 7Hats, where every journey is a story waiting to be told. Our mission is to redefine exploration by combining thrilling experiences with cultural immersion and sustainable travel practices.</p>
+              <p>From scaling majestic peaks to diving into vibrant underwater worlds, each trip is meticulously crafted to inspire, educate, and leave a lasting impact. We believe in preserving the natural beauty of our planet while enriching the lives of those who dare to explore it.</p>
+              <a href="#about" className="cta-btn">Learn More</a>
             </div>
-            <button className="btn">Buy plan</button>
-            <ul>
-              <li>Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Labore et dolore magna aliqua.</li>
-              <li>1-hour, dedicated support response time</li>
-              <li>Sit amet luctus venenatis lectus.</li>
-              <li>Felis donec et odio pellentesque diam. Semper quis lectus nulla at volutpat.</li>
-            </ul>
           </div>
         </div>
       </section>
+
+      <ToursSection />
 
       <section id="reviews" className="reviews">
         <h2>Reviews</h2>
@@ -147,7 +123,9 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <p>&copy; 2024 SevenHats. All rights reserved.</p>
+        <div className="footer-bottom">
+          <p>&copy; 2024 SevenHats. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );

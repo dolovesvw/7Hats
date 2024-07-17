@@ -1,17 +1,5 @@
-//import Homepage from './Pages/Home/homepage.js';
-//import './App.css';
-
-//function App() {
-//  return (
-//    <div className="App">
-//      <Homepage />
-//    </div>
-//  );
-//}
-
-//export default App;
-
-import LandingPage from './Pages/LandingPage/LandingPage.js';
+import React from 'react';
+import LandingPage from './Pages/LandingPage/LandingPage';
 
 function App() {
   return (
@@ -22,3 +10,4 @@ function App() {
 }
 
 export default App;
+

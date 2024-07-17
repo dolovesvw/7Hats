@@ -1,0 +1,64 @@
+.tour-card {
+  width: 45%; /* Adjust width for larger screens */
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+}
+
+.tour-image {
+  width: 100%; /* Ensure the image takes full width of its container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  border-radius: 0; /* Remove rounded corners */
+}
+
+.tour-details {
+  text-align: left; /* Left align text */
+  padding: 10px;
+  width: 100%; /* Ensure the text takes full width of its container */
+}
+
+.tour-name {
+  font-size: 24px; /* Adjust font size for a closer match */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.tour-info {
+  font-size: 18px; /* Adjust font size for a closer match */
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.tour-price {
+  font-size: 20px; /* Adjust font size for a closer match */
+  font-weight: bold;
+  color: #007bff; /* Adjust color as per your design */
+}
+
+.explore-all-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.explore-all-btn button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.explore-all-btn button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .tour-card {
+    width: 100%; /* Make tour card take full width on smaller screens */
+  }
+}
