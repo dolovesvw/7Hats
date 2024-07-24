@@ -1,126 +1,21 @@
-/* App.css */
-html,
 body {
-  height: 100%;
-  margin: 0;
   font-family: Arial, sans-serif;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header,
-main,
-footer {
-  padding: 20px;
-}
-
-main {
-  flex: 1;
-}
-
-.header,
-.tours,
-.about,
-.contact,
-.footer {
-  padding: 20px;
-}
-
-.header {
-  background: #f8f8f8;
-  border-bottom: 1px solid #ddd;
-}
-
-.navbar ul {
-  list-style: none;
+  margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.navbar ul li {
-  margin: 0 10px;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-}
-
-.tours,
-.about,
-.contact {
-  background: #fff;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.tour-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.tour-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 300px;
   box-sizing: border-box;
-  transition: transform 0.3s ease;
+  background: url("https://neera.wpengine.com/wp-content/uploads/2023/12/Neera-Contact-page-pattern-bg.png");
 }
 
-.tour-card:hover {
-  transform: scale(1.05);
-}
-
-.tour-card h3 {
-  margin: 0 0 10px 0;
-}
-
-.price {
-  color: #e91e63;
-  font-weight: bold;
-}
-
-.about,
-.contact {
-  text-align: left;
-}
-
-@media (min-width: 768px) {
-  .tour-card {
-    width: 45%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .tour-card {
-    width: 30%;
-  }
-}
-
-.footer {
-  background: #333;
-  color: #fff;
-  padding: 20px;
+.landing-container {
   text-align: center;
-  font-size: 0.9em;
-  margin-top: auto;
+}
+
+.divider {
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }

@@ -1,15 +1,14 @@
-import Navbar from '../Navbar/Navbar.js';
+// src/Components/Header/Header.js
 import './Header.css';
 
-function Header() {
-  return (
-    <header className="header">
-      <div className="branding">
-        <h1>7Hats</h1>
-      </div>
-      <Navbar />
-    </header>
-  );
-}
+const Header = () => (
+  <header className="header">
+    <div className="header-content">
+      <h1>Welcome to 7Hats</h1>
+      <p>Your adventure starts here</p>
+      <button className="cta-btn">Explore Now</button>
+    </div>
+  </header>
+);
 
 export default Header;

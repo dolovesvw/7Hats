@@ -1,4 +1,3 @@
-import React from 'react';
 import './Tour.css'; // Styling for Tour component
 
 const Tour = ({ imageSrc, name, country, numberOfPeople, price, alignRight }) => {

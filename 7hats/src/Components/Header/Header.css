@@ -1,16 +1,57 @@
 .header {
+  position: relative;
+  background-image: url("../../Data/Assets/Images/banner-background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 92vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+  padding-top: 50px;
+  overflow: hidden;
 }
 
-.branding h1 {
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 3em;
   margin: 0;
+}
+
+.header-content p {
   font-size: 1.5em;
 }
 
-@media (min-width: 768px) {
-  .branding h1 {
-    font-size: 2em;
-  }
+.cta-btn {
+  background-color: #ffaa00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-btn:hover {
+  background-color: #ff9900;
 }

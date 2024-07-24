@@ -1,0 +1,28 @@
+.top-info {
+  background: transparent;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.top-info span {
+  display: inline-block;
+}
+
+.top-links a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.top-links a:hover {
+  text-decoration: underline;
+}
