@@ -1,5 +1,4 @@
 import './App.css';
-import TopInfo from './Components/TopInfo/TopInfo.js';
 import Navbar from './Components/Navbar/Navbar.js';
 import Header from './Components/Header/Header';
 import About from './Components/About/About';
@@ -10,8 +9,6 @@ import Footer from './Components/Footer/Footer';
 
 const LandingPage = () => (
   <div className="landing-container">
-    <TopInfo />
-    <div className="divider"></div>
     <Navbar />
     <Header />
     <About />
