@@ -1,6 +1,5 @@
 .header {
   position: relative;
-  background-image: url("../../Data/Assets/Images/banner-background.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -10,6 +9,7 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
+  transition: background-image 0.5s ease-in-out; /* Smooth transition for background image */
 }
 
 .header::before {
@@ -35,6 +35,7 @@
   font-size: 3em;
   margin: 0;
   line-height: 1.2; /* Improve readability by adjusting line height */
+  margin-top: 180px;
 }
 
 .header-content p {
