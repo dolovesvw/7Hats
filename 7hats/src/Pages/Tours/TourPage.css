@@ -1,0 +1,15 @@
+/* src/styles/TourInfo.css */
+.page {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}

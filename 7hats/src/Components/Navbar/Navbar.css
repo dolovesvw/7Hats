@@ -85,6 +85,7 @@
   display: none; /* Initially hidden */
 }
 
+/* Media Queries for Mobile View */
 @media (max-width: 768px) {
   .navbar-center {
     justify-content: flex-start;

@@ -9,7 +9,7 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
-  transition: background-image 0.5s ease-in-out; /* Smooth transition for background image */
+  transition: background-image 0.5s ease-in-out;
 }
 
 .header::before {
@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
@@ -28,13 +28,13 @@
   z-index: 2;
   max-width: 800px;
   text-align: center;
-  padding: 0 20px; /* Add some padding for smaller screens */
+  padding: 0 20px;
 }
 
 .header-content h1 {
   font-size: 3em;
   margin: 0;
-  line-height: 1.2; /* Improve readability by adjusting line height */
+  line-height: 1.2;
   margin-top: 180px;
 }
 
@@ -43,7 +43,7 @@
   font-size: 1.5em;
 }
 
-.cta-btn {
+.hcta-btn {
   background-color: #c2aa8c;
   color: white;
   border: none;
@@ -54,41 +54,44 @@
   text-transform: uppercase;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to the button */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.cta-btn:hover {
+.hcta-btn:hover {
   background-color: #a8916c;
-  transform: scale(1.05);
+  transform: translateY(-3px);
 }
 
-/* Responsive adjustments */
+.carousel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  z-index: 2;
+  transition: background-color 0.5s ease;
+}
+
 @media (max-width: 768px) {
   .header-content h1 {
-    font-size: 3em; /* Increased from 2.5em to 3em */
+    font-size: 2.5em;
   }
 
   .header-content p {
-    font-size: 1.5em; /* Increased from 1.2em to 1.5em */
-  }
-
-  .cta-btn {
-    font-size: 1.1em; /* Slightly increased button text size */
-    padding: 14px 28px; /* Adjusted padding for larger text */
+    font-size: 1.2em;
   }
 }
 
 @media (max-width: 480px) {
   .header-content h1 {
-    font-size: 2.5em; /* Increased from 2em to 2.5em */
+    font-size: 2em;
   }
 
   .header-content p {
-    font-size: 1.2em; /* Increased from 1em to 1.2em */
+    font-size: 1em;
   }
 
-  .cta-btn {
-    font-size: 1em; /* Adjusted button text size */
-    padding: 12px 24px; /* Adjusted padding for consistency */
+  .hcta-btn {
+    padding: 10px 20px;
+    font-size: 1em;
   }
 }

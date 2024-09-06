@@ -1,22 +1,41 @@
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar.js';
-import Header from './Components/Header/Header';
-import About from './Components/About/About';
-import ToursSection from './Components/Tours/TourSection';
-import Reviews from './Components/WebReviews/Reviews';
-import Contact from './Components/Contact/Contact';
-import Footer from './Components/Footer/Footer';
+import Home from './Pages/Home/Home';
+import Tours from './Pages/Tours/TourPage';
+import About from './Pages/About/AboutPage';
+import Contact from './Pages/Contact/ContactPage';
+import Loading from './Components/Loading/Loading'; // Import the Loading component
 
-const LandingPage = () => (
-  <div className="landing-container">
-    <Navbar />
-    <Header />
-    <About />
-    <ToursSection />
-    <Reviews />
-    <Contact />
-    <Footer />
-  </div>
-);
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
-export default LandingPage;
+  useEffect(() => {
+    const loadAssets = async () => {
+      // Simulate loading of assets (e.g., images, data)
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate a 2-second loading time
+      setIsLoading(false);
+    };
+
+    loadAssets();
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tours" element={<Tours />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* Fallback route for any unmatched paths */}
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;

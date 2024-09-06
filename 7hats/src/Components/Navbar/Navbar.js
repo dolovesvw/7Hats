@@ -1,55 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Navbar.css';
 import logo from '../../Data/Assets/Images/7hatsblue.png';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isSolid, setIsSolid] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // State to track scroll position
 
   const toggleNavbar = () => {
     setIsNavOpen(!isNavOpen);
   };
 
-  const handleSmoothScroll = (e) => {
-    e.preventDefault();
-    const targetId = e.currentTarget.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth'
-      });
-    }
-    setIsNavOpen(false);
-  };
-
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) { // Adjust this value if needed
-        setIsSolid(true);
+      if (window.scrollY > 50) { // Adjust the value to determine when the color changes
+        setIsScrolled(true);
       } else {
-        setIsSolid(false);
+        setIsScrolled(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    // Initial check in case the page is already scrolled
-    handleScroll();
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <nav className={`navbar ${isSolid ? 'solid' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'solid' : ''}`}> {/* Apply the 'solid' class when scrolled */}
       <div className="navbar-left">
         <ul className="navbar-links">
-          <li><a href="#home" onClick={handleSmoothScroll}>Home</a></li>
-          <li><a href="#locations" onClick={handleSmoothScroll}>Locations</a></li>
-          <li><a href="#tourspage" onClick={handleSmoothScroll}>Tours</a></li>
-          <li><a href="#contact" onClick={handleSmoothScroll}>Contact Us</a></li>
+          <li><Link to="/" onClick={() => setIsNavOpen(false)}>Home</Link></li>
+          <li><Link to="/tours" onClick={() => setIsNavOpen(false)}>Tours</Link></li>
+          <li><Link to="/about" onClick={() => setIsNavOpen(false)}>Abuout Us</Link></li>
+          <li><Link to="/contact" onClick={() => setIsNavOpen(false)}>Contact Us</Link></li>
         </ul>
       </div>
       <div className="navbar-center">
@@ -71,10 +55,10 @@ const Navbar = () => {
       {/* Applying the open class conditionally */}
       <div className={`navbar-links-container ${isNavOpen ? 'open' : ''}`}>
         <ul className="navbar-links mobile">
-          <li><a href="#home" onClick={handleSmoothScroll}>Home</a></li>
-          <li><a href="#locations" onClick={handleSmoothScroll}>Locations</a></li>
-          <li><a href="#tourspage" onClick={handleSmoothScroll}>Tours</a></li>
-          <li><a href="#contact" onClick={handleSmoothScroll}>Contact Us</a></li>
+          <li><Link to="/" onClick={() => setIsNavOpen(false)}>Home</Link></li>
+          <li><Link to="/tours" onClick={() => setIsNavOpen(false)}>Tours</Link></li>
+          <li><Link to="/about" onClick={() => setIsNavOpen(false)}>Abuout Us</Link></li>
+          <li><Link to="/contact" onClick={() => setIsNavOpen(false)}>Contact Us</Link></li>
         </ul>
       </div>
     </nav>

@@ -1,0 +1,26 @@
+.back-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.scroll-to-top {
+  background-color: #d1c0a0; /* Background color similar to the image */
+  color: white;
+  border-radius: 50%;
+  padding: 15px; /* Increased padding to accommodate the larger icon */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+  background-color: #b59c7c; /* Slightly darker on hover */
+}
+
+.plane-icon {
+  font-size: 40px; /* Increase the size of the plane icon */
+  transform: rotate(-90deg); /* Rotate the plane to face upwards */
+}

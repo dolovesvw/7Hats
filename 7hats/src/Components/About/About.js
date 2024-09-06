@@ -1,25 +1,56 @@
-// src/Components/About/About.js
-import './About.css';
+import React from "react";
+import "./About.css";
+import logo from '../../Data/Assets/Images/tour-image.jpg';
+import { FaUserAlt } from "react-icons/fa";
 
-const About = () => (
-  <section id="about" className="about">
-    <div className="about-content">
-      <div className="about-header">
-        <h2>About Us</h2>
-        <i className="fas fa-globe"></i>
-      </div>
-      <div className="about-details">
+function About() {
+  return (
+    <section className="about">
+      <div className="about-content">
+        
+        {/* Left Column */}
+        <div className="text-section">
+          <h3>About the Firm</h3> {/* Added "About the Firm" */}
+          <h2>Fantastic Services Provided by 7Hats</h2>
+          
+          <div className="icon-list">
+            <div className="icon-list-column">
+              <FaUserAlt className="icon" />
+              <p>Ut Pharetra Sit</p>
+              <FaUserAlt className="icon" />
+              <p>Morbi Non Arcu</p>
+              <FaUserAlt className="icon" />
+              <p>Vitae Suscipit Tellus</p>
+            </div>
+            <div className="icon-list-column">
+              <FaUserAlt className="icon" />
+              <p>Pharetra Magna</p>
+              <FaUserAlt className="icon" />
+              <p>Faucibus Purus In</p>
+              <FaUserAlt className="icon" />
+              <p>Morbi Non Arcu</p>
+            </div>
+          </div>
+
+          <div className="acta-buttons">
+            <a href="#more" className="acta-btn">View More</a>
+            <a href="#book" className="acta-btn secondary">Book Your Adventure</a>
+          </div>
+        </div>
+
+        {/* Right Column - Image */}
         <div className="about-image">
-          <img src="https://framerusercontent.com/images/LFk5B5IxBlb2wEVCa388JSoBfJQ.jpg" alt="Adventure" />
-        </div>
-        <div className="about-text">
-          <p>Embark on extraordinary adventures with 7Hats, where every journey is a story waiting to be told...</p>
-          <p>From scaling majestic peaks to diving into vibrant underwater worlds...</p>
-          <a href="#about" className="cta-btn">Learn More</a>
+          <img src={logo} alt="Adventure" />
+          <div className="about-quote">
+            <p>"Aliquam quis nisi rutrum, aliquam erat ac, aliquam purus. Nulla pellentesque gravida rutrum." - Jadir Khan</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+}
 
 export default About;
+
+
+
