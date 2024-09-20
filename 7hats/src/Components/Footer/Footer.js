@@ -1,6 +1,5 @@
 import './Footer.css';
 import logo from '../../Data/Assets/Images/7hatsblue.png';
-import partner1 from '../../Data/Assets/Images/raraspain.png';
 
 const Footer = () => (
   <footer className="footer">
@@ -47,14 +46,6 @@ const Footer = () => (
           <input type="email" placeholder="Email Address" />
           <button type="submit" className="submit-btn">Submit</button>
         </form>
-      </div>
-    </div>
-
-    <div className="footer-bottom">
-      <div className="footer-logos">
-        <img src={partner1} alt="Partner 1" />
-        <img src={partner1} alt="Partner 2" />
-        <img src={partner1} alt="Partner 3" />
       </div>
     </div>
   </footer>
