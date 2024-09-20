@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
 }
 
 .header-image {
@@ -33,8 +34,8 @@
 }
 
 .content {
-  flex: 1; /* Take up remaining space */
-  padding: 40px 60px;
+  flex: 1;
+  padding: 20px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -43,9 +44,9 @@
 }
 
 .content h1 {
-  font-size: 6em;
-  margin-bottom: 150px;
-  letter-spacing: 0.2em;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  letter-spacing: 0.1em;
 }
 
 .text-and-photo {
@@ -94,4 +95,64 @@
 .founder-name span {
   font-size: 0.8em;
   color: #666666; /* Grey color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 3em; /* Increased text size */
+    margin-bottom: 20px;
+    text-align: center; /* Centered text */
+  }
+
+  .text-and-photo {
+    flex-direction: column-reverse; /* Switches order of image and text */
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .text-content p {
+    font-size: 1.2em; /* Bigger text size */
+    line-height: 1.9; /* Adjusted line height */
+  }
+
+  .founder-photo {
+    max-width: 250px;
+    margin-top: 20px; /* Add space between text and image */
+  }
+
+  .signature-section {
+    margin-top: 20px;
+  }
+
+  .signature-image {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 10px;
+  }
+
+  .content h1 {
+    font-size: 2.5em; /* Slightly reduced font size for small phones */
+    margin-bottom: 30px;
+  }
+
+  .text-content p {
+    font-size: 1.5em; /* Increase text size on smaller phones */
+    line-height: 2; /* Adjust line height */
+  }
+
+  .founder-photo {
+    max-width: 200px;
+  }
+
+  .signature-image {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

@@ -1,7 +1,7 @@
 // src/pages/TourPage.js
-import React from 'react';
+import React, { useState } from 'react';
 import './TourPage.css';
-import SNavbar from '../../Components/SmallNavbar/SNavbar'; // Adjust the path if needed
+import SNavbar from '../../Components/SmallNavbar/SNavbar';
 import tour1 from '../../Data/Assets/Images/tour-image.jpg';
 
 // Individual Tour Component
@@ -22,43 +22,61 @@ const Tour = ({ imageSrc, name, country, numberOfPeople, price, alignRight }) =>
 };
 
 // Tours Section Component
-const ToursSection = () => {
+const ToursSection = ({ selectedCountry }) => {
   const toursData = [
     {
       imageSrc: tour1,
-      name: 'Robin Yacht',
-      country: 'Canada, Zona A',
-      numberOfPeople: '2 - 6 Persons',
-      price: '$100/ Room',
+      name: 'Santorini Cruise',
+      country: 'Greece',
+      numberOfPeople: '2 - 4 Persons',
+      price: '$150 / Room',
     },
     {
       imageSrc: tour1,
-      name: 'Sea Roger',
-      country: 'French, Zona B',
-      numberOfPeople: '2 - 3 Persons',
-      price: '$100/ Room',
+      name: 'Venice Sail',
+      country: 'Italy',
+      numberOfPeople: '2 - 5 Persons',
+      price: '$200 / Room',
     },
     {
       imageSrc: tour1,
-      name: 'Robin Yacht',
-      country: 'Canada, Zona A',
-      numberOfPeople: '2 - 6 Persons',
-      price: '$100/ Room',
+      name: 'Barcelona Explorer',
+      country: 'Spain',
+      numberOfPeople: '1 - 4 Persons',
+      price: '$120 / Room',
     },
     {
       imageSrc: tour1,
-      name: 'Sea Roger',
-      country: 'French, Zona B',
-      numberOfPeople: '2 - 3 Persons',
-      price: '$100/ Room',
+      name: 'Santorini Explorer',
+      country: 'Greece',
+      numberOfPeople: '2 - 4 Persons',
+      price: '$150 / Room',
     },
-    // Add more tour objects as needed
+    {
+      imageSrc: tour1,
+      name: 'Venice Cruise',
+      country: 'Italy',
+      numberOfPeople: '2 - 5 Persons',
+      price: '$200 / Room',
+    },
+    {
+      imageSrc: tour1,
+      name: 'Barcelona Sail',
+      country: 'Spain',
+      numberOfPeople: '1 - 4 Persons',
+      price: '$120 / Room',
+    },
   ];
+
+  // Filter tours based on the selected country
+  const filteredTours = selectedCountry === 'All'
+    ? toursData
+    : toursData.filter(tour => tour.country === selectedCountry);
 
   return (
     <section className="page-tours-section">
       <div className="page-tour-cards">
-        {toursData.map((tour, index) => (
+        {filteredTours.map((tour, index) => (
           <Tour
             key={index}
             imageSrc={tour.imageSrc}
@@ -74,12 +92,34 @@ const ToursSection = () => {
   );
 };
 
+// Country Selection Component
+const CountrySelection = ({ selectedCountry, setSelectedCountry }) => {
+  const countries = ['All', 'Greece', 'Italy', 'Spain'];
+
+  return (
+    <div className="country-selection">
+      {countries.map((country, index) => (
+        <button
+          key={index}
+          className={`country-button ${selectedCountry === country ? 'active' : ''}`}
+          onClick={() => setSelectedCountry(country)}
+        >
+          {country}
+        </button>
+      ))}
+    </div>
+  );
+};
+
 // Main Page Component
 const TourPage = () => {
+  const [selectedCountry, setSelectedCountry] = useState('All');
+
   return (
     <div id="tour-info" className="page">
       <SNavbar />
-      <ToursSection />
+      <CountrySelection selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />
+      <ToursSection selectedCountry={selectedCountry} />
     </div>
   );
 };

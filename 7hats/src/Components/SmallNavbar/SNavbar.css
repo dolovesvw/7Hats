@@ -1,28 +1,26 @@
 .small-navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* This keeps the logo, links, and right section spaced */
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: white;
   border-bottom: 1px solid #ddd;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
+  position: relative;
+  flex-wrap: nowrap; /* Prevents items from wrapping */
 }
 
 .logo img {
-  height: 60px; /* Increased the size from 60px to 80px */
+  height: 60px;
 }
 
+/* Desktop nav links */
 .nav-links {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  flex: 1; /* This will allow the links to center */
-  justify-content: center;
+  flex-grow: 1; /* Allows nav links to grow and take available space */
+  justify-content: center; /* Centers nav links */
 }
 
 .nav-links li {
@@ -33,16 +31,25 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 14px; /* Adjust font size if needed */
+  font-size: 14px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent; /* For underlining effect on hover */
 }
 
-.right-section {
-  display: flex;
-  align-items: center;
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #b59c7c; /* Change link color on hover */
+  border-bottom: 2px solid #b59c7c; /* Add underline effect */
+}
+
+/* Active/Clicked effect for links */
+.nav-links a:active {
+  color: #8a6d54; /* Slightly darker color on click */
+  border-bottom: 2px solid #8a6d54;
 }
 
 .book-now-button {
-  background-color: #b59c7c; /* Button color */
+  background-color: #b59c7c;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -52,10 +59,29 @@
   margin-right: 20px;
 }
 
-.hamburger-menu {
+.book-now-button:hover {
+  background-color: #8a6d54; /* Change button color on hover */
+}
+
+.right-section {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 0; /* Ensures right-section does not grow */
+}
+
+.hamburger-menu {
+  display: none;
   flex-direction: column;
   cursor: pointer;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.hamburger-menu:hover {
+  background-color: #ddd;
 }
 
 .hamburger-menu .line {
@@ -63,4 +89,94 @@
   height: 3px;
   background-color: black;
   margin: 3px 0;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-menu:hover .line {
+  background-color: #b59c7c;
+}
+
+/* Mobile side menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+}
+
+/* Mobile view nav links */
+.side-menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 15px;
+  transition: color 0.3s ease, border-left 0.3s ease;
+  border-left: 3px solid transparent; /* For side border effect */
+}
+
+.side-menu a:hover {
+  color: #b59c7c;
+  border-left: 3px solid #b59c7c; /* Add left border effect on hover */
+}
+
+.side-menu a:active {
+  color: #8a6d54;
+  border-left: 3px solid #8a6d54; /* Darker left border when clicked */
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide nav links on mobile */
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .side-menu {
+    display: flex;
+  }
+}
+
+/* Responsive styling for desktop */
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none; /* Hide hamburger menu on desktop */
+  }
+
+  .side-menu {
+    display: none; /* Hide side menu on desktop */
+  }
+
+  .nav-links {
+    display: flex; /* Show nav links on desktop */
+  }
+
+  .right-section {
+    display: flex;
+  }
 }

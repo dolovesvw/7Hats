@@ -1,71 +1,49 @@
-.tours-section {
-  padding: 40px;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #007bff; /* Blue color, adjust as needed */
-  text-transform: uppercase;
-  letter-spacing: 2px; /* Increase letter spacing for emphasis */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
-}
-
-.tour-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .tour-card {
   width: 45%; /* Adjust width for larger screens */
   margin-bottom: 20px;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #f9f5f1; /* Soft beige background */
   display: flex;
   align-items: center;
   justify-content: center; /* Center the image and details */
-}
-
-.tour-card.align-right {
-  justify-content: flex-end;
-}
-
-.tour-card.align-left {
-  justify-content: flex-start;
+  flex-direction: column; /* Stack items vertically for Tour, overridden in TourSection */
+  border: 1px solid #e0cba8; /* Light gold border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .tour-image {
   width: 100%; /* Ensure the image takes full width of its container */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure the image covers the entire container */
-  border-radius: 0; /* Remove rounded corners */
+  border-radius: 8px; /* Slight rounding for elegance */
 }
 
 .tour-details {
   text-align: left; /* Left align text */
-  padding: 10px;
-  flex: 1;
+  padding: 15px;
+  width: 100%; /* Ensure the text takes full width of its container */
+  flex: 1; /* Allow details to take available space */
+  background-color: #fff; /* White background for the text section */
+  border-top: 1px solid #e0cba8; /* Match border color */
 }
 
 .tour-name {
-  font-size: 24px; /* Adjust font size for a closer match */
+  font-size: 24px; /* Keep the same size */
   font-weight: bold;
   margin-bottom: 5px;
+  color: #333; /* Darker color for better contrast */
 }
 
 .tour-info {
   font-size: 18px; /* Adjust font size for a closer match */
-  color: #666;
+  color: #666; /* Keep it neutral */
   margin-bottom: 5px;
 }
 
 .tour-price {
-  font-size: 20px; /* Adjust font size for a closer match */
+  font-size: 20px; /* Keep the same size */
   font-weight: bold;
-  color: #007bff; /* Adjust color as per your design */
+  color: #d4a373; /* Soft gold color inspired by the image */
 }
 
 .explore-all-btn {
@@ -75,14 +53,39 @@
 
 .explore-all-btn button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #d4a373; /* Soft gold button */
   color: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 4px; /* Small rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .explore-all-btn button:hover {
-  background-color: #0056b3;
+  background-color: #b88a5a; /* Darker gold on hover */
+}
+
+/* TourSection specific styles */
+.tours-section {
+  padding: 40px;
+  background-color: #f9f5f1; /* Match background to the tour card */
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #d4a373; /* Gold color for the section title */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Keep letter spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.tour-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* Media Query for smaller screens */
