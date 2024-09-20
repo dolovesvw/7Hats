@@ -1,5 +1,5 @@
-// src/pages/TourPage.js
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom'; // Import useLocation
 import './TourPage.css';
 import SNavbar from '../../Components/SmallNavbar/SNavbar';
 import tour1 from '../../Data/Assets/Images/tour-image.jpg';
@@ -45,33 +45,10 @@ const ToursSection = ({ selectedCountry }) => {
       numberOfPeople: '1 - 4 Persons',
       price: '$120 / Room',
     },
-    {
-      imageSrc: tour1,
-      name: 'Santorini Explorer',
-      country: 'Greece',
-      numberOfPeople: '2 - 4 Persons',
-      price: '$150 / Room',
-    },
-    {
-      imageSrc: tour1,
-      name: 'Venice Cruise',
-      country: 'Italy',
-      numberOfPeople: '2 - 5 Persons',
-      price: '$200 / Room',
-    },
-    {
-      imageSrc: tour1,
-      name: 'Barcelona Sail',
-      country: 'Spain',
-      numberOfPeople: '1 - 4 Persons',
-      price: '$120 / Room',
-    },
   ];
 
   // Filter tours based on the selected country
-  const filteredTours = selectedCountry === 'All'
-    ? toursData
-    : toursData.filter(tour => tour.country === selectedCountry);
+  const filteredTours = toursData.filter(tour => tour.country === selectedCountry || selectedCountry === 'All');
 
   return (
     <section className="page-tours-section">
@@ -113,7 +90,11 @@ const CountrySelection = ({ selectedCountry, setSelectedCountry }) => {
 
 // Main Page Component
 const TourPage = () => {
-  const [selectedCountry, setSelectedCountry] = useState('All');
+  const location = useLocation(); // Get location
+  const queryParams = new URLSearchParams(location.search);
+  const countryFromQuery = queryParams.get('country') || 'All'; // Get country from query or default to 'All'
+
+  const [selectedCountry, setSelectedCountry] = useState(countryFromQuery);
 
   return (
     <div id="tour-info" className="page">
