@@ -1,4 +1,4 @@
-#7Hats
+# 7Hats
 
 7Hats is a simple React web application built as a personal practice project. It was developed to improve my skills in modern frontend development while creating something useful for my dad.
 
